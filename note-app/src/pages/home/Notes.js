@@ -1,10 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import NoteList from "../../components/note/NoteList";
 
 const Notes = () => {
-  const navigate = useNavigate();
+
   const [list, setlist] = useState([]);
   const userRef = useRef();
 
@@ -29,7 +28,7 @@ const Notes = () => {
   };
   useEffect(() => {
     getNotes();
-  },[]);
+  },[list]);
  
   return (
     <div className="ml-20 mt-10">

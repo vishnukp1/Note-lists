@@ -6,7 +6,7 @@ const NoteList = ({ list }) => {
     await axios.delete(`http://localhost:3033/note/${id}`);
   };
 
-  const updateNotes = async (note, color, id) => {
+  const updateNotes = async (note,id) => {
     const red = "red";
     const item = {
       note: note,
@@ -16,13 +16,13 @@ const NoteList = ({ list }) => {
   };
   useEffect(() => {
     updateNotes();
-  }, [list]);
+  }, []);
 
   return (
     <div>
       {list.map(function (data) {
         return (
-          <div>
+          <div key={data._id}>
             <span style={{ backgroundColor: `${data.color}` }}>
               {data.note}
             </span>
