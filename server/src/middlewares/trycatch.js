@@ -5,7 +5,7 @@ const tryCatch = (controller) =>{
 
             }catch(error){
                res.json({
-                status:500,
+                status:"failure",
                 message:"something went wrong",
                 error_message:error.message,
                }) 

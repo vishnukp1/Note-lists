@@ -17,8 +17,8 @@ const registerUser = async (req, res) => {
     status: "success",
     data: user,
   });
-}; 
- 
+};
+
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
   const user = await userShema.findOne({ email });
@@ -40,7 +40,7 @@ const loginUser = async (req, res) => {
   );
 
   res.status(200).json({
-    message: "User successfully login", 
+    message: "User successfully login",
     status: "success",
     token: token,
   });

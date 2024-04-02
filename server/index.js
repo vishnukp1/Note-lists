@@ -2,12 +2,12 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const noteRouter = require("./src/routes/noteRouter");
-const cors = require('cors')
-const morgan = require('morgan')
+const cors = require("cors");
+const morgan = require("morgan");
 
-app.use(morgan())
+app.use(morgan());
 
-app.use(cors())
+app.use(cors());
 app.use(express.json());
 
 mongoose
