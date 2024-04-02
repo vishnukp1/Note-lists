@@ -6,11 +6,11 @@ const NoteList = ({ list }) => {
     await axios.delete(`http://localhost:3033/note/${id}`);
   };
 
-  const updateNotes = async (note,id) => {
-    const red = "red";
+  const updateNotes = async (note,id,color) => {
+ 
     const item = {
       note: note,
-      color: red,
+      color: color,
     };
     await axios.put(`http://localhost:3033/note/${id}`, item);
   };
@@ -33,16 +33,11 @@ const NoteList = ({ list }) => {
             >
               delete
             </button>
-            <button
-              onClick={() => updateNotes(data.note, data._id)}
-              className="mt-4 bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white uppercase rounded text-xs tracking-wider"
-            >
-              update
-            </button>
+           
             <label>
               pick color
               <select
-                onClick={() => updateNotes(data.note, data._id)}
+               onChange={(e) => updateNotes(data.note, data._id, e.target.value)}
                 className="mt-4 bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white uppercase rounded text-xs tracking-wider"
                 name="selectedFruit"
               >
