@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import NoteList from "../../components/note/NoteList";
 
+
 const Notes = () => {
 
   const [list, setlist] = useState([]);
